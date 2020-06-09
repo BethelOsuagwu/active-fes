@@ -1,0 +1,67 @@
+1. [DONE] change runing order, move init into init_emgfes.m. this file will ask to confirm if the initialisztion is needed. it will run emgfesgui.m if init is not needed
+2. [DONE]function to disble/enable double thresh. thus: aFES.useDoubleThresh={1,0}(add to gui) : so this replaces the condition checking inside the 'Motor to FES' block.
+
+4. [DONE][DONE INDIRECTLY BY INCRESING FEEDBACK WINDO TIME]
+4. in tracing insert a zero state b/w the two trapeziums so we have /````\____      or /````\     ____  and not /````\       as we currently have
+   -------                                                                    \___/          \___/                    \___/ 
+5. [NEEDS RECHECK]activation of FES under normal proportional (i.e no double_thresh) to EMG: b/c the activation is harder
+6. {DONE}aFES.tracing.MaxHeightFactor:: Solve the mistry of this variable
+8. [DONE]The set the correct time axis so the trace window can fit in the trapezium during tracing
+7. [DONE]is the trapezium, the correct shape in the trace_output
+9. [DONE]in the gui, correct the Tags
+10. [Done] Implement gui for aFES.mode
+11. [DONE]put feedback window on a separate window of its own so that we can scale how we want
+3. analize data
+12. Confirm FES SAFETY LIMIT IS IMPLEMENTED
+13. [DONE]with no double_thresh does monoChannel works well and how do we determin threshold for OFF so that another channel can set to on. soln=>implement singleThresh
+
+14. [DONE] monoStim is working?
+15. [DONE] Do GUI for monoStim
+16. [DONE]When using singleThresh, plot the sinlge thresh instead of doubleThresh
+17. [DONE]Disable non-tunable gui 
+
+18. [Done]Make sure c is less <=2.5 i.e 300%. this would mean that pw<=pwMin+2.5*pwFactor
+19. [Done]Implement: tracing pw feedback tfbck/(pwMin+0.9*pwFactor)
+20. [DONE]Convert goniometer reading to angle during plotting of results. i.e get calibration equation
+21. [DONE]is the EMG in miliVolts?
+22. [DONE]EMG fullscale var in init_emgfes.m
+23. GUI menu functions for auto applying the correct settings for different modes
+24. [DONE]why is the pw feedback not rounded anymore
+25. [DONE]Biasing the value of wrist position
+26. [PERHAPS CALIB DEPENDENT]why is extension activation and FES much more effective than flextion(something dodgy)??? flex activation goes up and down
+27. experiment with: wristActSuppON
+28. [DONE]set c to is reviouse value when we have 'Setting channel to 0 b/c overactivation on Channel: '
+29. [Done]Consider raising the thresholds when stimulation is ON.
+
+
+[Implementation of stats and methods]
+0. May need to change EMG sensitivity if patients  have too same EMG(suggested values are 3V,1V and 3mV, see page 7 of EMG sensor manual)????
+1. Compare tracing results with and without doubleThresh on
+2. During tracing make sure you set pwThresh to zero[NOTE THIS DOES NOTE SEEM TO BE NECCESSARY]. 
+4. When runing on patients we need to check if the filter on the EMG are not removeing too much
+
+[OLD-Patient data collection]
+[During tracing set the ON of doubleThresh=singleThresh (to allow better comparison b/w single vs double thresh). But the OFF of doubleThresh can be anything suitable]
+1. Set up the System on patient
+2. Determine Thresholds and currents using Single thresh
+3. -Practice Tracing 2 times - FES current = 0, set Mode to Normal
+4. Perform 2 tracing without stimulation - Single thresh [- rnd with 5]
+5. Perform 2 tracing without stimulation - Double thresh [- rnd with 4]
+6. -Practice Tracing 2 times - with FES using  determined currents, set Mode to Normal
+7. Perform 2 tracing with stimulation - [Single thresh rdn with 8]
+8. Perform 2 tracing with stimulation - [Double thresh rdm with 7]
+
+
+[Patient data collection (11/06/2018)]
+[During tracing set the ON of doubleThresh=singleThresh (to allow better comparison b/w single vs double thresh). But the OFF of doubleThresh can be anything suitable]
+1. Set up the System on patient
+2. Determine Thresholds and currents using Single thresh
+3. Determin: maximum wrist extension and flexion under electrical stimulation
+4. -Practice Tracing 2 times - FES current = 0, set Mode to Normal
+
+/* Repeat the forllowing for each of (1)Wrist tracing and (2)Pulsewidth tracing 
+5. Perform 2 tracing without stimulation - Single thresh.
+6. -Practice Tracing 2 times - with FES using  determined currents, set Mode to Normal
+7. Perform 2 tracing with stimulation - [Single thresh rdn with 8]
+8. Perform 2 tracing with stimulation - [Double thresh rdm with 7]
+

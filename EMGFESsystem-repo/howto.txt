@@ -1,0 +1,33 @@
+[Setup]
+Find the picture showing the electrod setup.
+
+[Initialization]
+1) Run 'init_emgfes.m'
+    The EMG-FES gui should appear
+
+[Calibration]
+1) Using the EMG-FES gui ( available from init_emgfes.m), set currents to ED and FDS to 1mA or 0mA.
+2) Click the start button and wait for the Active FES gui to appear
+3) Perform Max wrist extension and flexion, max hand extension and flexion (for able-bodied, perform sub-max flexion and extension in order to simulate injury)
+4) Click stop.
+5) From the main menu, click 'Settings>Calibration>Calibrate with last run'
+6) Set the currents for ED and FDS to about 10mA. And repeat step 2-5.
+7) Repeat step 6 until adequate control can be achieved by observing the the Active FES gui bars
+8) Adjust parameters like Currents, Pw factor, Pw Thresh and Double Thresh until a good control can be observed. Repeat step 6 if required.
+
+[Tracing]
+The tracing is a feedback following of trapezoidal shape. The feedback is the proportion FES pulsewidth the subjects is receiving
+To activate tracing, do the following:
+1) Start the system from the EMG-FES gui.
+2) Click on the button, 'Connect trace' and use wrist and finger extension and flexion to control the cross sign to follow closely as possible the circular sign on the Feedback window.
+3) Click stop when the markers vanish. Recorded data will be saved automatically.
+
+[Other experiments]
+1) CLick on start from the EMG-FES gui.
+2) Use wrist and finger extension and flexion to control FES intensity
+
+[Paramters]
+- Current: The cureent in mA for each of ED and FDS
+- Pw factor: A factor used to multiple the extracted intention go get pulsewidth.
+- Pw Thresh: A value (offset) added to the extracted intention multiplied by Pw factor. This is to avoid having the pulsewidth starting from low values
+- Double thresh: This is the double thresh defined by ......

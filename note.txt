@@ -1,0 +1,11 @@
+Antagonist muscle EMG seem to be significantly depressed with highpass cut off at about 100-150Hz
+The 100-150Hz highpass reduces  the M-wave of FES
+
+-Two bands that shows good EMG signals are: 
+[150Hz] cutoff highpass
+[150-400Hz or a bit higher] bandpass(very clean but reduced amplitude)
+[150-300Hz] bandpass(very clean but reduced amplitude)
+NOTE you can use about 80-100Hz lower cutoff also with no too much of antagonist and M-wave contamination
+
+[Idea]
+extract data between up to 50Hz up to 100Hz and up to 150Hz; Classify the cause of increase in these bands and use the power in the bands to make descisions on when artifact is dominant 

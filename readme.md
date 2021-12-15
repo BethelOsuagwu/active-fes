@@ -2,6 +2,8 @@
 
 # Active FES system for hand/wrist rehabilitation following neurological injury
 The Active FES system uses a software signal processing approach to extract voluntary EMG from a pair of muscles under electrical stimulation; and uses the extracted EMG as a control signal to modulate the intensity of the stimulation. It is used to augment intended movement with functional electrical stimulation (FES). 
+## Publications 
+Osuagwu, B.A., Whicher, E. and Shirley, R., 2020. Active proportional electromyogram controlled functional electrical stimulation system. Scientific reports, 10(1), pp.1-15.
 ## Apparatus
 1. Hasomed Rehastim stimulator
 2. Two channel EMG recorder with analogue input to MATLAB ([Biometrics DATALink system](http://www.biometricsltd.com/datalink.htm) (with [Surface EMG Sensor (SX230)](http://www.biometricsltd.com/surface-emg-sensor.htm) ) is the only tested and trusted device for this application)
